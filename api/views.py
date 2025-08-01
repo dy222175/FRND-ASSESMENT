@@ -141,12 +141,7 @@ def update_song_cache(song_instance):
         logging.error(f"Error updating song cache for {song_instance.song_id}: {e}")
 
 def _normalize_column_oriented_json_data(data_dict):
-    """
-    Transforms column-oriented JSON data (like playlist[76].json)
-    into a list of row-oriented song dictionaries.
-    This version explicitly maps each field and provides defaults for missing/None values
-    to prevent 'NoneType' errors and ensure non-nullable fields have a value.
-    """
+ 
     normalized_records = []
     num_songs = len(data_dict.get("id", {}))
     
@@ -294,11 +289,7 @@ class SongSearchAPIView(generics.ListAPIView):
 
 
 class RateSongAPIView(APIView):
-    """
-    API endpoint to allow users to rate a song (1-5 stars).
-    PUT /api/songs/rate
-    Request Payload: {"song_id": "song123", "rating": 4}
-    """
+ 
     def put(self, request, *args, **kwargs):
         try:
             song_id = request.data.get('song_id')

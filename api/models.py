@@ -27,15 +27,11 @@ class Song(models.Model):
         ordering = ['-rating', 'title']
 
     def __str__(self):
-        """
-        String representation of the Song object, useful for Django Admin.
-        """
+ 
         return f"{self.title} (ID: {self.song_id})"
 
     def save(self, *args, **kwargs):
-        """
-        Custom save method to ensure rating is within 1-5 if provided.
-        """
+
         if self.rating is not None and not (1 <= self.rating <= 5):
             raise ValueError("Rating must be between 1 and 5.")
         super().save(*args, **kwargs)
