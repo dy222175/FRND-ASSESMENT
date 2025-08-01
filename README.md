@@ -184,5 +184,3 @@ The sample JSON file (`playlist[76].json`) is column-oriented. The application a
 * ✅ Fully containerized for scalable deployment.
 
 ---
-
-Let me know if you'd like a badge section, usage GIFs/screenshots, or GitHub actions integration!
