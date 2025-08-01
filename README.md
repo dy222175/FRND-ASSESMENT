@@ -1,9 +1,4 @@
 # Backend Engineer Assignment Solution
-
-This project provides a complete solution for the Backend Engineering assignment. It focuses on efficient data processing, building a RESTful API with caching, and containerizing the application for deployment.
-
----
-
 ## 🚀 Key Features
 
 * **Data Ingestion**: Upload JSON files through a dedicated API endpoint. The uploaded data is normalized and stored in a SQLite database.
@@ -128,59 +123,4 @@ PUT /api/songs/rate/
 
 > Replace `"song_id"` with a valid ID from your database.
 
----
 
-## 🐳 Docker Deployment
-
-You can deploy the application using **Docker Compose**.
-
-### Prerequisites:
-
-* Docker and Docker Compose installed.
-* Docker Desktop running.
-
-### Step 1: Configure Environment
-
-Open the `docker-compose.yml` file and update MySQL and Redis configurations if needed.
-
-### Step 2: Build and Run the Services
-
-From the project root directory, run:
-
-```bash
-docker-compose up --build -d
-```
-
-This will:
-
-* Build the backend image.
-* Start backend, MySQL, and Redis containers in the background.
-
-**API will be available at:**
-
-```
-http://127.0.0.1:8000
-```
-
-### Step 3: Stop the Services
-
-```bash
-docker-compose down
-```
-
----
-
-## 📂 Sample Data Format
-
-The sample JSON file (`playlist[76].json`) is column-oriented. The application automatically normalizes this structure before inserting the data into the `songs` table.
-
----
-
-## ✅ Summary
-
-* ✅ Upload JSON song data.
-* ✅ Access, search, and rate songs through RESTful endpoints.
-* ✅ Uses Redis for optimized caching.
-* ✅ Fully containerized for scalable deployment.
-
----
